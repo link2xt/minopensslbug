@@ -1,5 +1,4 @@
 fn main() {
-    let mut _tls = native_tls::TlsConnector::builder();
-    let _tls = _tls.build().unwrap();
+    openssl::ssl::SslConnector::builder(openssl::ssl::SslMethod::tls()).unwrap();
     println!("Hello, world!");
 }
